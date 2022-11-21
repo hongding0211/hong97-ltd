@@ -10,7 +10,7 @@ COPY ./ /home/node/app
 
 RUN npm config set registry http://registry.npm.taobao.org
 
-corepack enable
+RUN corepack enable
 RUN npm install
 RUN npm run build
 
