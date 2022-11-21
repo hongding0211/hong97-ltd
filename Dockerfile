@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 
 MAINTAINER keith.dh@hotmail.com
 
@@ -10,6 +10,7 @@ COPY ./ /home/node/app
 
 RUN npm config set registry http://registry.npm.taobao.org
 
+RUN corepack enable
 RUN npm install
 RUN npm run build
 
