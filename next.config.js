@@ -5,6 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
+  eslint: {
+    dirs: ['component', 'config', 'pages', 'pubic', 'styles'],
+  },
 }
 
 module.exports = nextConfig
