@@ -8,10 +8,7 @@ WORKDIR /home/node/app
 
 COPY ./ /home/node/app
 
-RUN npm config set registry http://registry.npm.taobao.org
+RUN yarn
+RUN yarn build
 
-RUN corepack enable
-RUN npm install
-RUN npm run build
-
-CMD npm run start
+CMD yarn start
