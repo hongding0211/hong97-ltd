@@ -1,8 +1,8 @@
-import AppLayout from "../../components/appLayout/appLayout";
-import React from "react";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {useTranslation} from "next-i18next";
-import Head from "next/head";
+import AppLayout from '../../components/appLayout/appLayout'
+import React from 'react'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+import Head from 'next/head'
 
 const Projects: React.FC = () => {
   const { t } = useTranslation('projects')
@@ -11,15 +11,21 @@ const Projects: React.FC = () => {
     <>
       <Head>
         <title>{t('title')}</title>
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff"/>
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000"/>
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#fff"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#000"
+        />
       </Head>
       <AppLayout>
-        <article className='prose prose-sm sm:prose-base prose-neutral dark:prose-invert'>
+        <article className="prose prose-sm prose-neutral dark:prose-invert sm:prose-base">
           <h1>{t('title')}</h1>
-          <p>
-            To be continued
-          </p>
+          <p>To be continued</p>
         </article>
       </AppLayout>
     </>
@@ -33,5 +39,5 @@ export async function getStaticProps({ locale }: any) {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'projects'])),
     },
-  };
+  }
 }
