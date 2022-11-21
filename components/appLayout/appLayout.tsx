@@ -150,13 +150,12 @@ const AppLayout: React.FC<IAppLayout> = props => {
               <a
                 href='https://hong97.ltd/walkingcalc/'
                 target='_blank' rel="noreferrer"
-                className='text-sky-400 hover:underline'
+                className='text-sky-400 hover:underline cursor-pointer'
               >Walking Calculator</a>
               <a
                 href='https://hong97.ltd/sso/login'
                 target='_blank' rel="noreferrer"
-                className='text-sky-400 hover:underline'
-
+                className='text-sky-400 hover:underline cursor-pointer'
               >Single Sign On</a>
             </div>
           </div>
@@ -168,12 +167,12 @@ const AppLayout: React.FC<IAppLayout> = props => {
             <a
               href='https://github.com/hongding0211/hong97-ltd'
               target='_blank' rel="noreferrer"
-              className='hover:underline'
+              className='hover:underline cursor-pointer'
             >Github Repo</a>
             <a
               href='https://beian.miit.gov.cn/#/Integrated/index'
               target='_blank' rel="noreferrer"
-              className='hover:underline'
+              className='hover:underline cursor-pointer'
             >沪 ICP 备 2022003448 号
             </a>
           </div>

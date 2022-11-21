@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>HONG</title>
+        <title>HONG | LTD</title>
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff"/>
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000"/>
       </Head>
       <AppLayout>
 
