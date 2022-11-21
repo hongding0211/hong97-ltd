@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import Logo from "../logo";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEllipsisVertical, faEnvelope, faXmark} from "@fortawesome/free-solid-svg-icons";
@@ -31,6 +31,21 @@ const AppLayout: React.FC<IAppLayout> = props => {
   const [lineStyle, lineApi] = useSpring( () => {})
   const [menuItemStyle, menuItemApi] = useSpring( () => {})
   const { t } = useTranslation('common')
+
+  useEffect(() => {
+    function resize() {
+      const c = document.querySelector<HTMLElement>('.app-layout-content')
+      if (!c) {
+        return
+      }
+      c.style.minHeight = `${window.innerHeight - 64}px`
+    }
+    resize()
+    window.addEventListener('resize', resize)
+    return () => {
+      window.removeEventListener('resize', resize)
+    }
+  },[])
 
   function handleChangeDarkMode(isDarkMode: boolean) {
     if (isDarkMode) {
@@ -117,7 +132,7 @@ const AppLayout: React.FC<IAppLayout> = props => {
         )
       }
 
-      <div className='min-h-[calc(100vh-64px)] flex flex-col justify-between'>
+      <div className='flex flex-col justify-between app-layout-content'>
         <div className='p-5'>
           {props.children}
         </div>
