@@ -9,6 +9,7 @@ import {faWeixin} from "@fortawesome/free-brands-svg-icons"
 import {menuConfig} from "../../config/config"
 import Link from "next/link";
 import {animated, useSpring} from "@react-spring/web";
+import { useTranslation } from 'next-i18next';
 
 interface IAppLayout {
   children?: React.ReactNode
@@ -29,6 +30,7 @@ const AppLayout: React.FC<IAppLayout> = props => {
   const [menuContainerStyle, menuContainerApi] = useSpring( () => {})
   const [lineStyle, lineApi] = useSpring( () => {})
   const [menuItemStyle, menuItemApi] = useSpring( () => {})
+  const { t } = useTranslation('common')
 
   function handleChangeDarkMode(isDarkMode: boolean) {
     if (isDarkMode) {
@@ -81,7 +83,7 @@ const AppLayout: React.FC<IAppLayout> = props => {
           <div className='flex gap-x-[24px]'>
             {
               menuConfig.map(m => (
-                <Link key={m.key} href={m.path} className='cursor-pointer hover:font-medium'>{m.title}</Link>
+                <Link key={m.key} href={m.path} className='cursor-pointer hover:font-medium'>{t(`nav.${m.key}`)}</Link>
               ))
             }
           </div>
@@ -100,7 +102,7 @@ const AppLayout: React.FC<IAppLayout> = props => {
               {menuConfig.map(m => (
                 <div key={m.key}>
                   <animated.span style={{...menuItemStyle}}>
-                    <Link href={m.path} className='block my-4 cursor-pointer hover:font-medium'>{m.title}</Link>
+                    <Link href={m.path} className='block my-4 cursor-pointer hover:font-medium'>{t(`nav.${m.key}`)}</Link>
                   </animated.span>
                   <animated.div style={{...lineStyle}}>
                     <Divider />
@@ -123,13 +125,13 @@ const AppLayout: React.FC<IAppLayout> = props => {
         <footer className='bg-black w-full p-5 text-xs font-light text-neutral-200'>
           <div className='flex flex-col sm:flex-row gap-x-10 gap-y-3'>
             <div className='flex flex-col gap-y-1'>
-              <span className='font-medium'>联系我</span>
+              <span className='font-medium'>{t('contact')}</span>
               <span><FontAwesomeIcon icon={faEnvelope} className='mr-1 text-[10px]'/>keith.dh@hotmail.com</span>
               <span><FontAwesomeIcon icon={faWeixin} className='mr-1 text-[10px]'/>1479224723</span>
             </div>
 
             <div className='flex flex-col gap-y-1'>
-              <span className='font-medium'>我的项目</span>
+              <span className='font-medium'>{t('myProject')}</span>
               <a
                 href='https://hong97.ltd/walkingcalc/'
                 target='_blank' rel="noreferrer"
