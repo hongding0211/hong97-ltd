@@ -8,6 +8,7 @@ import useDarkMode from 'use-dark-mode'
 import {faWeixin} from "@fortawesome/free-brands-svg-icons"
 import {menuConfig} from "../../config/config"
 import Link from "next/link";
+import {animated, useSpring} from "@react-spring/web";
 
 interface IAppLayout {
   children?: React.ReactNode
@@ -25,6 +26,9 @@ const AppLayout: React.FC<IAppLayout> = props => {
       }
     },
   })
+  const [menuContainerStyle, menuContainerApi] = useSpring( () => {})
+  const [lineStyle, lineApi] = useSpring( () => {})
+  const [menuItemStyle, menuItemApi] = useSpring( () => {})
 
   function handleChangeDarkMode(isDarkMode: boolean) {
     if (isDarkMode) {
@@ -34,15 +38,43 @@ const AppLayout: React.FC<IAppLayout> = props => {
     }
   }
 
+  function handleClickShowMenu() {
+    menuContainerApi.start({
+      from: {
+        y: -10,
+        opacity: 0,
+      },
+      to: {
+        y: 0,
+        opacity: 1,
+      }
+    })
+    lineApi.start({
+      from: {
+        scale: 0,
+        x: '-50%',
+      },
+      to: {
+        scale: 1,
+        x: '0',
+      }
+    })
+    menuItemApi.start({
+      from: {opacity: 0},
+      to: {opacity: 1},
+    })
+    setShowMenu(!showMenu)
+  }
+
   return (
     <div className='text-neutral-900 dark:text-neutral-50'>
       <nav
-        className='h-[64px] flex items-center justify-between px-5 sticky top-0 backdrop-blur-xl backdrop-saturate-150 bg-white/[0.5] dark:bg-black/[0.5] z-10'>
+        className='h-[64px] flex items-center justify-between px-5 sticky top-0 backdrop-blur-xl backdrop-saturate-150 bg-white/[0.5] dark:bg-black/[0.5] z-20'>
         <Logo width={20} className='fill-neutral-800 dark:fill-neutral-100'/>
         <FontAwesomeIcon
           icon={showMenu ? faXmark : faEllipsisVertical}
           className='h-[20px] px-3 cursor-pointer hover:scale-110 transition-transform duration-150 ease-in-out sm:hidden'
-          onClick={() => setShowMenu(!showMenu)}
+          onClick={handleClickShowMenu}
         />
 
         <div className='items-center hidden sm:flex'>
@@ -59,19 +91,28 @@ const AppLayout: React.FC<IAppLayout> = props => {
       </nav>
       {
         showMenu &&
-        (<div className='sm:hidden fixed top-[64px] left-0 right-0 bottom-0 bg-white dark:bg-black z-10'>
-          <Divider/>
-          <div className='grid grid-cols-1 mx-5 divide-y divide-neutral-600 dark:divide-neutral-300'>
-            {menuConfig.map(m => (
-              <div key={m.key}>
-                <Link href={m.path} className='my-4 cursor-pointer hover:font-medium'>{m.title}</Link>
-              </div>
-            ))}
-            <div className='flex w-full justify-end pt-5'>
-              <NavButtons darkMode={darkMode.value} onDarkModeChange={handleChangeDarkMode}/>
+        (
+          <animated.div
+            style={{...menuContainerStyle}}
+            className='sm:hidden fixed top-[64px] left-0 right-0 bottom-0 bg-white dark:bg-black z-10'
+          >
+            <div className='grid grid-cols-1 mx-5 dark:divide-neutral-300'>
+              {menuConfig.map(m => (
+                <div key={m.key}>
+                  <animated.span style={{...menuItemStyle}}>
+                    <Link href={m.path} className='block my-4 cursor-pointer hover:font-medium'>{m.title}</Link>
+                  </animated.span>
+                  <animated.div style={{...lineStyle}}>
+                    <Divider />
+                  </animated.div>
+                </div>
+              ))}
+              <animated.div style={{...menuItemStyle}} className='flex w-full justify-end pt-5'>
+                <NavButtons darkMode={darkMode.value} onDarkModeChange={handleChangeDarkMode}/>
+              </animated.div>
             </div>
-          </div>
-        </div>)
+          </animated.div>
+        )
       }
 
       <div className='min-h-[calc(100vh-64px)] flex flex-col justify-between'>
