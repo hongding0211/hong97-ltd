@@ -1,10 +1,16 @@
 import AppLayout from "../components/appLayout/appLayout"
 import {menuConfig} from "../config/config"
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <AppLayout
-      menuConfig={menuConfig}
-    />
+    <>
+      <Head>
+        <title>HONG</title>
+      </Head>
+      <AppLayout
+        menuConfig={menuConfig}
+      />
+    </>
   )
 }
