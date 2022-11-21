@@ -1,0 +1,9 @@
+{
+  "contact": "Contact",
+  "myProject": "My Projects",
+  "nav": {
+    "blog": "Blog",
+    "projects": "Projects",
+    "about": "About"
+  }
+}

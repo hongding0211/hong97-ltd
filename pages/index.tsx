@@ -1,6 +1,6 @@
 import AppLayout from "../components/appLayout/appLayout"
-import {menuConfig} from "../config/config"
 import Head from "next/head";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
   return (
@@ -8,9 +8,17 @@ export default function Home() {
       <Head>
         <title>HONG</title>
       </Head>
-      <AppLayout
-        menuConfig={menuConfig}
-      />
+      <AppLayout>
+
+      </AppLayout>
     </>
   )
+}
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
 }
