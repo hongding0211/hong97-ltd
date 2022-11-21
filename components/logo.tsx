@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
+import Link from "next/link";
 
 interface ILogo {
   width?: number
@@ -9,14 +10,8 @@ const Logo: React.FC<ILogo> = ({width = 32, className}) => {
   const w = width
   const h = 57 / 32 * width
 
-  const [homeUrl, setHomeUrl] = useState('')
-
-  useEffect(() => {
-    setHomeUrl(document.location.href)
-  }, [])
-
   return (
-    <a href={homeUrl}>
+    <Link href='/'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width={w}
@@ -30,7 +25,7 @@ const Logo: React.FC<ILogo> = ({width = 32, className}) => {
           ></path>
         </g>
       </svg>
-    </a>
+    </Link>
   )
 }
 
