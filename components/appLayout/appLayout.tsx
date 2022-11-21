@@ -42,6 +42,18 @@ const AppLayout: React.FC<IAppLayout> = props => {
           className='h-[20px] px-3 cursor-pointer hover:scale-110 transition-transform duration-150 ease-in-out sm:hidden'
           onClick={() => setShowMenu(!showMenu)}
         />
+
+        <div className='items-center hidden sm:flex'>
+          <div className='flex gap-x-[24px]'>
+            {
+              props.menuConfig.map(m => (
+                <div key={m.key} className='cursor-pointer hover:font-medium'>{m.title}</div>
+              ))
+            }
+          </div>
+          <div className='w-[1px] h-[20px] bg-neutral-300 dark:bg-neutral-600 mx-[30px]'/>
+          <NavButtons darkMode={darkMode.value} onDarkModeChange={handleChangeDarkMode}/>
+        </div>
       </nav>
       {
         showMenu &&

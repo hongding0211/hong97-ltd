@@ -13,12 +13,12 @@ const NavButtons: React.FC<INavButtons> = props => {return (
       <a href='https://github.com/hongding0211' target='_blank' rel="noreferrer">
         <FontAwesomeIcon
           icon={faGithub}
-          className='h-[20px] w-[20px] cursor-pointer text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors duration-150 ease-in-out'
+          className='h-[20px] w-[20px] cursor-pointer text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors duration-150 ease-in-out'
         />
       </a>
       <FontAwesomeIcon
         icon={props.darkMode ? faSun : faMoon}
-        className='h-[20px] w-[20px] cursor-pointer text-neutral-500 hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors duration-150 ease-in-out'
+        className='h-[20px] w-[20px] cursor-pointer text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors duration-150 ease-in-out'
         onClick={() => props.onDarkModeChange(!props.darkMode)}
       />
     </div>
