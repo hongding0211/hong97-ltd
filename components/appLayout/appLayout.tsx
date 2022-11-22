@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import Logo from '../logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEllipsisVertical,
   faEnvelope,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import Divider from '../divider'
-import NavButtons from './navButtons'
 import useDarkMode from 'use-dark-mode'
 import { faWeixin } from '@fortawesome/free-brands-svg-icons'
-import { menuConfig } from '../../config/config'
 import Link from 'next/link'
 import { animated, useSpring } from '@react-spring/web'
 import { useTranslation } from 'next-i18next'
+import { menuConfig } from '../../config/config'
+import NavButtons from './navButtons'
+import Divider from '../divider'
+import Logo from '../logo'
 
 interface IAppLayout {
   children?: React.ReactNode
@@ -193,16 +193,8 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
 
           <div className="my-3 h-[1px] bg-neutral-300" />
 
-          <div className="flex flex-wrap gap-x-2 gap-y-1">
+          <p>
             <span>Copyright © {new Date().getFullYear()} hong97.ltd. </span>
-            <a
-              href="https://github.com/hongding0211/hong97-ltd"
-              target="_blank"
-              rel="noreferrer"
-              className="cursor-pointer hover:underline"
-            >
-              Github Repo
-            </a>
             <a
               href="https://beian.miit.gov.cn/#/Integrated/index"
               target="_blank"
@@ -211,7 +203,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
             >
               沪 ICP 备 2022003448 号
             </a>
-          </div>
+          </p>
         </footer>
       </div>
     </div>

@@ -3,7 +3,16 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["next", "prettier"],
+  "extends": [
+    "next",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
   "plugins": [
     "prettier"
   ],

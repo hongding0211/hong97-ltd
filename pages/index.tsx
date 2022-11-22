@@ -1,6 +1,7 @@
-import AppLayout from '../components/appLayout/appLayout'
 import Head from 'next/head'
+import React from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import AppLayout from '../components/appLayout/appLayout'
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           content="#000"
         />
       </Head>
-      <AppLayout></AppLayout>
+      <AppLayout />
     </>
   )
 }
