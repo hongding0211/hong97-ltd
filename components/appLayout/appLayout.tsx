@@ -193,16 +193,8 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
 
           <div className="my-3 h-[1px] bg-neutral-300" />
 
-          <div className="flex flex-wrap gap-x-2 gap-y-1">
+          <p>
             <span>Copyright © {new Date().getFullYear()} hong97.ltd. </span>
-            <a
-              href="https://github.com/hongding0211/hong97-ltd"
-              target="_blank"
-              rel="noreferrer"
-              className="cursor-pointer hover:underline"
-            >
-              Github Repo
-            </a>
             <a
               href="https://beian.miit.gov.cn/#/Integrated/index"
               target="_blank"
@@ -211,7 +203,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
             >
               沪 ICP 备 2022003448 号
             </a>
-          </div>
+          </p>
         </footer>
       </div>
     </div>
