@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import Logo from '../logo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faEllipsisVertical,
   faEnvelope,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import Divider from '../divider'
-import NavButtons from './navButtons'
 import useDarkMode from 'use-dark-mode'
 import { faWeixin } from '@fortawesome/free-brands-svg-icons'
-import { menuConfig } from '../../config/config'
 import Link from 'next/link'
 import { animated, useSpring } from '@react-spring/web'
 import { useTranslation } from 'next-i18next'
+import { menuConfig } from '../../config/config'
+import NavButtons from './navButtons'
+import Divider from '../divider'
+import Logo from '../logo'
 
 interface IAppLayout {
   children?: React.ReactNode

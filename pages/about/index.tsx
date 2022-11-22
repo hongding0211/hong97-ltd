@@ -1,10 +1,10 @@
-import AppLayout from '../../components/appLayout/appLayout'
 import React from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import Head from 'next/head'
+import AppLayout from '../../components/appLayout/appLayout'
 
-const About: React.FC = () => {
+function About() {
   const { t } = useTranslation('about')
 
   return (
