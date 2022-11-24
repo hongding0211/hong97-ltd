@@ -5,7 +5,7 @@ import Head from 'next/head'
 import AppLayout from '../../components/appLayout/appLayout'
 import Image from 'next/image'
 import me from '../../public/img/22-09-2022-01-31-00.jpeg'
-import cat from '../../public/img/IMG_8908.jpeg'
+import cat from '../../public/img/img_8908.jpeg'
 
 function About() {
   const { t } = useTranslation('about')
