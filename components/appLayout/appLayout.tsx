@@ -188,6 +188,14 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
               >
                 Single Sign On
               </a>
+              <a
+                href="https://hong97.ltd/log"
+                target="_blank"
+                rel="noreferrer"
+                className="cursor-pointer text-sky-400 hover:underline"
+              >
+                Log It
+              </a>
             </div>
           </div>
 

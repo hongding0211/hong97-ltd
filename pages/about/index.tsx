@@ -3,6 +3,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import Head from 'next/head'
 import AppLayout from '../../components/appLayout/appLayout'
+import Image from 'next/image'
+import me from '../../public/img/22-09-2022-01-31-00.jpeg'
+import cat from '../../public/img/IMG_8908.jpeg'
 
 function About() {
   const { t } = useTranslation('about')
@@ -24,14 +27,14 @@ function About() {
       </Head>
       <AppLayout>
         <article className="prose prose-sm prose-neutral mb-6 dark:prose-invert sm:mx-auto sm:mb-12 sm:prose-base lg:prose-lg">
-          <img src="/img/22-09-2022-01-31-00.jpeg" alt="me" />
+          <Image src={me} alt="me" />
           <div className="mt-12 mb-6 sm:mt-24 sm:mb-12">
             <h1>{t('title')}</h1>
           </div>
           <p>{t('p1')}</p>
           <p>{t('p2')}</p>
           <figure>
-            <img src="/img/IMG_8908.jpeg" alt="cat" />
+            <Image src={cat} alt="cat" />
             <figcaption>{t('c1')}</figcaption>
           </figure>
           <h2>PING ME</h2>
