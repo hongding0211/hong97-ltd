@@ -103,6 +103,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
               <Link
                 key={m.key}
                 href={m.path}
+                target={m.externalLink ? '_blank' : ''}
                 className="cursor-pointer hover:font-medium"
               >
                 {t(`nav.${m.key}`)}

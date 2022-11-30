@@ -3,6 +3,7 @@
   "myProject": "My Projects",
   "nav": {
     "blog": "Blog",
+    "doc": "Documents",
     "projects": "Projects",
     "about": "About"
   }
