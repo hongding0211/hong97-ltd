@@ -12,7 +12,7 @@ export const menuConfig: IMenuItem[] = [
   },
   {
     key: 'doc',
-    path: 'https://doc.hong97.ltd',
+    path: 'https://docs.hong97.ltd',
     externalLink: true,
   },
   {
