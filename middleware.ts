@@ -10,9 +10,7 @@ export function middleware(request: NextRequest) {
   if (url.pathname === '/') {
     url.pathname = '/about'
 
-    const token = sha256(
-      `${Math.floor(Date.now() / 600000)}${LOG_SECRET}`
-    )
+    const token = sha256(`${Math.floor(Date.now() / 600000)}${LOG_SECRET}`)
     fetch(`https://hong97.ltd/log/api/log?token=${token}`, {
       method: 'POST',
       headers: {
