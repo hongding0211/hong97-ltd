@@ -10,7 +10,7 @@ import { faWeixin } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 import { animated, useSpring } from '@react-spring/web'
 import { useTranslation } from 'next-i18next'
-import { menuConfig } from '../../config/config'
+import { footerConfig, menuConfig } from '../../config/config'
 import NavButtons from './navButtons'
 import Divider from '../divider'
 import Logo from '../logo'
@@ -103,6 +103,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
               <Link
                 key={m.key}
                 href={m.path}
+                target={m.externalLink ? '_blank' : ''}
                 className="cursor-pointer hover:font-medium"
               >
                 {t(`nav.${m.key}`)}
@@ -172,22 +173,17 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
 
             <div className="flex flex-col gap-y-1">
               <span className="font-medium">{t('myProject')}</span>
-              <a
-                href="https://hong97.ltd/walkingcalc/"
-                target="_blank"
-                rel="noreferrer"
-                className="cursor-pointer text-sky-400 hover:underline"
-              >
-                Walking Calculator
-              </a>
-              <a
-                href="https://hong97.ltd/sso/login"
-                target="_blank"
-                rel="noreferrer"
-                className="cursor-pointer text-sky-400 hover:underline"
-              >
-                Single Sign On
-              </a>
+              {footerConfig.map((i) => (
+                <a
+                  href={i.path}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cursor-pointer text-sky-400 hover:underline"
+                  key={i.key}
+                >
+                  {i.title}
+                </a>
+              ))}
             </div>
           </div>
 

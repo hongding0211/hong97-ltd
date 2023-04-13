@@ -3,6 +3,7 @@
   "myProject": "我的项目",
   "nav": {
     "blog": "博客",
+    "doc": "技术文档",
     "projects": "项目",
     "about": "关于我"
   }
