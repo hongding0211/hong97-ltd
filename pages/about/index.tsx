@@ -38,7 +38,7 @@ function About() {
           <ul>
             <li>Github: https://github.com/hongding0211</li>
             <li>{t('email')}: keith.dh@hotmail.com</li>
-            <li>{t('wechart')}: 1479224723</li>
+            <li>{t('wechat')}: 1479224723</li>
           </ul>
           <h2>{t('h1')}</h2>
           <ul>
