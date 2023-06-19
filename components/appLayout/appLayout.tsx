@@ -6,7 +6,7 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
 import useDarkMode from 'use-dark-mode'
-import { faWeixin } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter, faWeixin } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 import { animated, useSpring } from '@react-spring/web'
 import { useTranslation } from 'next-i18next'
@@ -168,6 +168,10 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
               <span>
                 <FontAwesomeIcon icon={faWeixin} className="mr-1 text-[10px]" />
                 1479224723
+              </span>
+              <span class="flex items-center">
+                <img src="https://www.xiaohongshu.com/favicon.ico" alt='xhs' class="w-[11px] h-[11px] mr-1"/>
+                <a href='https://www.xiaohongshu.com/user/profile/5b4cb655f7e8b918f05ca063' target='__blank'>{t('xhs')} @弘</a>
               </span>
             </div>
 
