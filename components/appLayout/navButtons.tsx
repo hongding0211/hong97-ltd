@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faMoon, faSun, faLanguage } from '@fortawesome/free-solid-svg-icons'
+import { faLanguage, faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
 interface INavButtons {
   darkMode: boolean

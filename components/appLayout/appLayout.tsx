@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faWeixin } from '@fortawesome/free-brands-svg-icons'
 import {
   faEllipsisVertical,
   faEnvelope,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import useDarkMode from 'use-dark-mode'
-import { faTwitter, faWeixin } from '@fortawesome/free-brands-svg-icons'
-import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { animated, useSpring } from '@react-spring/web'
 import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import useDarkMode from 'use-dark-mode'
+
 import { footerConfig, menuConfig } from '../../config/config'
-import NavButtons from './navButtons'
 import Divider from '../divider'
 import Logo from '../logo'
+import NavButtons from './navButtons'
 
 interface IAppLayout {
   children?: React.ReactNode
@@ -170,8 +171,17 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
                 1479224723
               </span>
               <span className="flex items-center">
-                <img src="https://www.xiaohongshu.com/favicon.ico" alt='xhs' className="w-[11px] h-[11px] mr-1"/>
-                <a href='https://www.xiaohongshu.com/user/profile/5b4cb655f7e8b918f05ca063' target='__blank'>{t('xhs')} @弘</a>
+                <img
+                  src="https://www.xiaohongshu.com/favicon.ico"
+                  alt="xhs"
+                  className="w-[11px] h-[11px] mr-1"
+                />
+                <a
+                  href="https://www.xiaohongshu.com/user/profile/5b4cb655f7e8b918f05ca063"
+                  target="__blank"
+                >
+                  {t('xhs')} @弘
+                </a>
               </span>
             </div>
 

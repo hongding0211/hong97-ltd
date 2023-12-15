@@ -1,6 +1,7 @@
+import sha256 from 'crypto-js/sha256'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import sha256 from 'crypto-js/sha256'
+
 import { LOG_SECRET } from './config'
 
 export function middleware(request: NextRequest) {
@@ -24,7 +25,7 @@ export function middleware(request: NextRequest) {
               ...pre,
               [cur]: request.headers.get(cur),
             }),
-            {}
+            {},
           ),
         },
       }),
