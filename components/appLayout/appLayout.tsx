@@ -1,4 +1,4 @@
-import { faTwitter, faWeixin } from '@fortawesome/free-brands-svg-icons'
+import { faWeixin } from '@fortawesome/free-brands-svg-icons'
 import {
   faEllipsisVertical,
   faEnvelope,
@@ -121,7 +121,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
       {showMenu && (
         <animated.div
           style={{ ...menuContainerStyle }}
-          className="fixed top-[64px] left-0 right-0 bottom-0 z-10 bg-white dark:bg-black sm:hidden"
+          className="fixed bottom-0 left-0 right-0 top-[64px] z-10 bg-white dark:bg-black sm:hidden"
         >
           <div className="mx-5 grid grid-cols-1 dark:divide-neutral-300">
             {menuConfig.map((m) => (
@@ -174,7 +174,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
                 <img
                   src="https://www.xiaohongshu.com/favicon.ico"
                   alt="xhs"
-                  className="w-[11px] h-[11px] mr-1"
+                  className="mr-1 h-[11px] w-[11px]"
                 />
                 <a
                   href="https://www.xiaohongshu.com/user/profile/5b4cb655f7e8b918f05ca063"
