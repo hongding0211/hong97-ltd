@@ -4,8 +4,7 @@
     "es2021": true
   },
   "extends": [
-    "next",
-    "prettier"
+    "next"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -14,9 +13,27 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "prettier"
+    "unused-imports"
   ],
   "rules": {
-    "prettier/prettier": "error"
-  }
+    "@next/next/no-img-element": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "node_modules",
+    ".next",
+    "next.config.js",
+    "next-i18next.config.js",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ]
 }
