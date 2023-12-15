@@ -18,5 +18,6 @@
 			"warn",
 			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
 		]
-  }
+  },
+  "ignorePatterns": ["node_modules", ".next", "next.config.js", "next-i18next.config.js"]
 }
