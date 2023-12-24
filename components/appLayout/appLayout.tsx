@@ -192,7 +192,7 @@ const AppLayout: React.FC<IAppLayout> = (props) => {
                   href={i.path}
                   target="_blank"
                   rel="noreferrer"
-                  className="cursor-pointer text-sky-400 hover:underline"
+                  className="cursor-pointer text-neutral-200 hover:underline"
                   key={i.key}
                 >
                   {i.title}

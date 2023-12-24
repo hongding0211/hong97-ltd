@@ -24,9 +24,9 @@ function About() {
         />
       </Head>
       <AppLayout>
-        <article className="prose prose-sm prose-neutral mb-6 dark:prose-invert sm:mx-auto sm:mb-12 sm:prose-base lg:prose-lg">
-          <img src="/img/22-09-2022-01-31-00.jpeg" alt="me" />
-          <div className="mt-12 mb-6 sm:mt-24 sm:mb-12">
+        <article className="prose prose-sm prose-neutral mb-6 dark:prose-invert sm:prose-base lg:prose-lg sm:mx-auto sm:mb-12">
+          <img src="/img/26-07-2023-23-50-18.jpeg" alt="me" />
+          <div className="mb-6 mt-12 sm:mb-12 sm:mt-24">
             <h1>{t('title')}</h1>
           </div>
           <p>{t('p1')}</p>
@@ -40,17 +40,6 @@ function About() {
             <li>Github: https://github.com/hongding0211</li>
             <li>{t('email')}: keith.dh@hotmail.com</li>
             <li>{t('wechat')}: 1479224723</li>
-          </ul>
-          <h2>{t('h1')}</h2>
-          <ul>
-            <li>Next.js</li>
-            <li>Tailwind CSS</li>
-            <li>
-              Logo {t('design')}{' '}
-              <a href="https://miuta.club" target="_blank" rel="noreferrer">
-                @muita
-              </a>
-            </li>
           </ul>
         </article>
       </AppLayout>
